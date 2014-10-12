@@ -48,9 +48,13 @@ Galleria.addTheme({
 
         // toggle info
         if ( options._toggleInfo === true ) {
-            info.bind( 'click:fast', function() {
+            this.$('info-link,info-close').bind('click:fast', function() {
                 info.toggle();
             });
+            /* info.bind( 'click:fast', function() {
+                info.toggle();
+            });
+            */
         } else {
             info.show();
             this.$('info-link, info-close').hide();
