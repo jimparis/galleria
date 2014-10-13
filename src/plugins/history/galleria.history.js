@@ -129,7 +129,12 @@ Galleria.History = (function() {
                 });
             }
 
-            loc.hash = setHash( val );
+            if (true) {
+                var baseUrl = loc.href.split('#')[0];
+                window.location.replace(baseUrl + '#' + setHash(val));
+            } else {
+                loc.hash = setHash( val );
+            }
         },
 
         ready: function(fn) {
