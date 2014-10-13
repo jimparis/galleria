@@ -29,11 +29,12 @@ Galleria.addTheme({
         // add some elements
         this.addElement('info-link','info-close');
         this.append({
-            'info' : ['info-link','info-close']
+            'info' : ['info-close'],
+            'container' : ['info-link']
         });
 
         // cache some stuff
-        var info = this.$('info-link,info-close,info-text'),
+        var info = this.$('info-link,info,info-close,info-text'),
             touch = Galleria.TOUCH;
 
         // show loader & counter with opacity
@@ -92,7 +93,7 @@ Galleria.addTheme({
             window.setTimeout(function() {
                 activate(e);
             }, touch ? 300 : 0);
-            this.$('info').toggle( this.hasInfo() );
+            // this.$('info-link').toggle( this.hasInfo() );
         });
 
         this.bind('loadfinish', function(e) {
