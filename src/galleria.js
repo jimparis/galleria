@@ -3656,6 +3656,16 @@ Galleria.prototype = {
 
             success: function() {
 
+                // If the initial stage height is 768 pixels or more, switch
+                // permanently to the "big" image.  This should really be
+                // recalculated on resize, but is good enough.
+                if (self._stageHeight > 768) {
+                    // Replace normal images with big images.
+                    self._data.forEach(function(data) {
+                        data.image = data.big;
+                    });
+                }
+
                 // save the instance
                 _galleries.push( self );
 
